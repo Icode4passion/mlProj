@@ -1,5 +1,7 @@
 
 
+Run the docker flask app
+
 ```sh
 docker-compose build
 docker-compose up
