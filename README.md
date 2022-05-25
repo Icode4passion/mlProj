@@ -1,3 +1,11 @@
+
+
+```sh
+docker-compose build
+docker-compose up
+
+```
+
 # mlProj
 
 These days people are talking about Machine learning , it is being used by many purposely or inadvertently . Before diving deep in to it , we will try to understand the basic definition , how it us it and where can we apply it. Learning this can be fun .
