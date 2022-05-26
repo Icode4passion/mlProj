@@ -1,3 +1,10 @@
+
+
+# Python Machine Learning Prediction with a Flask
+
+![Intro](https://i.postimg.cc/fbx4vLFt/Intro.jpg)
+
+
 As a python and machine learning enthusiast , i love reading blogs and code.
 In this article we will use Python and Flask in Deploying Machine Learning algorithms. 
 
@@ -320,7 +327,13 @@ Thanks for reading.
 
 ## Links 
 
-[![Flask](https://flask.palletsprojects.com/en/2.1.x/)]
+- [Python](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+- [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning)
+- [Docker](https://docs.docker.com/get-started/) 
+- [Sklearn](https://scikit-learn.org/stable/)
+- [Pandas](https://pandas.pydata.org/)
+- [Numpy](https://numpy.org/)
 
 
 
