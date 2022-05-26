@@ -244,18 +244,63 @@ if __name__ == "__main__":
 
 We are specifing flask to run on local host and by default the port is 5000 , debug=True menas , app needs to be reloaded when eve any change is made in app.py
 
-App ran successfully with out any error 
+App ran successfully with out any error and it is running in development mode in my local host 
 
 !['app_run'](https://i.postimg.cc/1R6jP9Lz/app-run.jpg)
 
-<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/1R6jP9Lz/app-run.jpg' border='0' alt='app-run'/></a>
+Now to check the host we add the route along with the localhost and port number which is by default 5000 http://localhost:5000/treepredict
+
+Oncec the url is hit , a form is diaplayed , fill in the data as required and the prediction based on the Tree Algorithm is displayed as show in below
+
+Enter the details , by default the resultant is "No sufficient data" below are the entered values
+
+!['form_data'](https://i.postimg.cc/N0QZNLDV/Form-display.jpg)
+
+Once we submit the values the Output is predicited by the ML algorithm
+
+!['form_result'](https://i.postimg.cc/N0QZNLDV/Form-display.jpg)
+
+### Building Docker containeer
+
+Our app requires many containers a comman way to easily manage multiple containers is to use Docker Compose. But we will need to create a Dockerfile to build a container image for our application. Let’s create both Docker Compose and Dockerfile in the directory 
 
 
+```sh 
+FROM python:3.7
+WORKDIR /app
+COPY . .
+EXPOSE 5000
+RUN python -m pip install --upgrade pip pip install -r requirements.txt
+ENTRYPOINT ["python3" ]
+CMD [ "app.py" ] 
 
- 
+```
+Dockerfile has the below details 
+
+- Add an application folder to the container
+- Copying the folder contents 
+- Expose TCP port 5000 to the host
+- Install the libraries from requirements.txt
+- Run the app
 
 
-Run the docker flask app
+Once we have a Dockerfile for application container, we can create a docker-compose.yml file, which will define all containers that the application will require to run.
+
+
+```sh 
+
+version: '3.7'
+services:
+    web:
+        build: .
+        ports:
+            - "5000:5000"
+        container_name: flaskMLapp
+    
+
+```
+
+We defined the web services and build the application using the below docker commands 
 
 ```sh
 docker-compose build
@@ -263,24 +308,19 @@ docker-compose up
 
 ```
 
-# mlProj
+Once the Application is build and conatiner is up we will see the same result as above.
 
-These days people are talking about Machine learning , it is being used by many purposely or inadvertently . Before diving deep in to it , we will try to understand the basic definition , how it us it and where can we apply it. Learning this can be fun .
+## Conclusion 
 
-> Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks. -- Wikipedia 
+In this article we have created a Machine Learning model that predicts the CO2 emission for the same we used SKlearn librabry , flask and docker.
+The article did not cover the in-depth knowledge Algorithms and how different algorithms have their performances and advanced ML topics .
+This can provide you with starting point so that explore more in this field of Machine learning.
 
-Machine learning is a fascinating and powerful field of study filled with algorithms and data. - [Jason Brownlee](https://machinelearningmastery.com/machine-learning-tribe/)
+Thanks for reading.
 
+## Links 
 
-In lay man terms Machine learning is a black box where in we feed the data to it , black box has some magical algorithms which does the magic and provide you the desired output .  
-
-Step 1: What is the problem?
-        -- The problem that we have taken here is 
-
-Step 2: Why does the problem need to be solved?
-Step 3: How would I solve the problem?
-
-
+[![Flask](https://flask.palletsprojects.com/en/2.1.x/)]
 
 
 
