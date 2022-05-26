@@ -152,7 +152,7 @@ since we already trained the model and the result is stored in the pkl form the
 dtc = joblib.load("dtc.pkl") , dtc has predict method which takes in the form values and sends the output to jinja.
 
 in the same directory create a html page and paste the below code .
-treepredict.html
+code for treepredict.html
 
 ```html
 <!DOCTYPE html>
@@ -233,8 +233,20 @@ treepredict.html
 ```
 
 
+Once the html file is created now lets roll the sleaves and run the application by adding the below code in app.py
 
- 
+```python 
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
+
+```
+
+We are specifing flask to run on local host and by default the port is 5000 , debug=True menas , app needs to be reloaded when eve any change is made in app.py
+
+App ran successfully with out any error 
+
+[![app-run.jpg](https://i.postimg.cc/1R6jP9Lz/app-run.jpg)](https://postimg.cc/XXj8k0NM)
 
 
 
