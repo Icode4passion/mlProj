@@ -1,6 +1,6 @@
 
 
-# Python Machine Learning Prediction with a Flask
+# Python Machine Learning Prediction with Flask
 
 ![Intro](https://i.postimg.cc/fbx4vLFt/Intro.jpg)
 --------------------------------------------------------
