@@ -246,8 +246,7 @@ We are specifing flask to run on local host and by default the port is 5000 , de
 
 App ran successfully with out any error 
 
-https://postimg.cc/XXj8k0NM
-
+[app-run.jpg](https://postimg.cc/XXj8k0NM)
 
 
 
